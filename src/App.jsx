@@ -444,7 +444,7 @@ const LandingPage = () => {
             </section>
 
             <section id="pricing" className="container" style={{ paddingBottom: '140px' }}>
-                <SectionTitle title="Plany Licencyjne" subtitle="Wybierz plan idealny dla Ciebie. Bez zobowiązań, anuluj w dowolnym momencie." />
+                <SectionTitle title="Cennik" subtitle="Wybierz plan idealny dla Ciebie. Bez zobowiązań, anuluj w dowolnym momencie." />
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem', maxWidth: '1100px', margin: '0 auto' }}>
                     <PriceCard title="30d" price="20 PLN" features={['Fajne moduły', 'kontakt z developerem', "dostep do kanału na dc"]} />
                     <PriceCard title="180d" price="30 PLN" highlighted={true} features={['Fajne moduły', 'kontakt z developerem', 'Dostep do wersji Beta', "dostep do kanału na dc"]} />
