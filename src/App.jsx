@@ -366,10 +366,10 @@ const LandingPage = () => {
 
             <section id="pricing" className="container" style={{ paddingBottom: '140px' }}>
                 <SectionTitle title="Cennik" subtitle="Wybierz plan idealny dla Ciebie. Bez zobowiązań, anuluj w dowolnym momencie." />
-                <div style={{ textAlign: 'center', padding: '4rem', background: 'rgba(255,255,255,0.01)', borderRadius: '30px', border: '1px dashed var(--glass-border)' }}>
-                    <h3 style={{ fontSize: '2rem', marginBottom: '1rem', color: 'var(--primary)' }}>Wkrótce dostępne</h3>
-                    <p style={{ color: 'var(--text-dim)', fontSize: '1.1rem' }}>Planowane plany: Cheaty 30d (20 zł), Cheaty 180d (30 zł), Cheaty LifeTime (40 zł)</p>
-                    <Link to="/register" className="glow-btn" style={{ marginTop: '2rem', padding: '18px 48px', display: 'inline-block' }}>Zarejestruj się</Link>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem', maxWidth: '1100px', margin: '0 auto' }}>
+                    <PriceCard title="30d" price="20 PLN" features={['Fajne moduły', 'kontakt z developerem', "dostep do kanału na dc"]} />
+                    <PriceCard title="180d" price="30 PLN" highlighted={true} features={['Fajne moduły', 'kontakt z developerem', 'Dostep do wersji Beta', "dostep do kanału na dc"]} />
+                    <PriceCard title="LifeTime" price="40 PLN" features={['Wszystko w Pakiecie 180d', 'Dostęp Wieczysty (Lifetime)', 'Dostęp do kanału na dc']} />
                 </div>
             </section>
 
@@ -429,8 +429,8 @@ const LandingPage = () => {
                                     ))}
                                 </div>
                             </div>
-                            <textarea placeholder="Co sądzisz o naszym projekcie? Każda opinia jest dla nas ważna..." value={newReview} onChange={e => setNewReview(e.target.value)} required />
-                            <button type="submit" className="glow-btn" style={{ width: '100%', padding: '20px' }}>Opublikuj Opinię <Send size={20} /></button>
+                            <textarea placeholder="Co sądzisz o naszym projekcie? Każda opinia jest dla nas ważna..." value={newReview} onChange={e => setNewReview(e.target.value)} required style={{ resize: 'vertical', minHeight: '120px', width: '100%', padding: '16px', border: '1px solid var(--glass-border)', borderRadius: '12px', background: 'rgba(255,255,255,0.02)', color: 'white', fontSize: '1rem' }} />
+                            <button type="submit" className="glow-btn" style={{ width: '100%', justifyContent: 'center', padding: '20px' }}>Opublikuj Opinię <Send size={20} /></button>
                         </form>
                     ) : (
                         <div style={{ textAlign: 'center', padding: '3rem' }}>
@@ -440,15 +440,6 @@ const LandingPage = () => {
                             <Link to="/login" className="glow-btn" style={{ padding: '16px 48px' }}>Przejdź do logowania</Link>
                         </div>
                     )}
-                </div>
-            </section>
-
-            <section id="pricing" className="container" style={{ paddingBottom: '140px' }}>
-                <SectionTitle title="Cennik" subtitle="Wybierz plan idealny dla Ciebie. Bez zobowiązań, anuluj w dowolnym momencie." />
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '3rem', maxWidth: '1100px', margin: '0 auto' }}>
-                    <PriceCard title="30d" price="20 PLN" features={['Fajne moduły', 'kontakt z developerem', "dostep do kanału na dc"]} />
-                    <PriceCard title="180d" price="30 PLN" highlighted={true} features={['Fajne moduły', 'kontakt z developerem', 'Dostep do wersji Beta', "dostep do kanału na dc"]} />
-                    <PriceCard title="LifeTime" price="40 PLN" features={['Wszystko w Pakiecie 180d', 'Dostęp Wieczysty (Lifetime)', 'Dostęp do kanału na dc']} />
                 </div>
             </section>
 
