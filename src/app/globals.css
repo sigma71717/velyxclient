@@ -1,0 +1,209 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Pinyon+Script&display=swap');
+
+:root {
+  --background: #0E0E10;
+  --foreground: #ffffff;
+  --purple-brand: #A855F7;
+  --purple-vibrant: #D946EF;
+  --purple-glow: rgba(168, 85, 247, 0.15);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  position: relative;
+  overflow-x: hidden;
+}
+
+/* ─── Advanced Background System ─── */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  /* Hexagons with subtle purple tint */
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0l25.98 15v30L30 60 4.02 45V15z' fill-opacity='0.012' fill='%23A855F7' fill-rule='evenodd'/%3E%3C/svg%3E");
+  background-size: 80px 80px;
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* More dramatic Purple Fog */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: 
+    radial-gradient(circle at 10% 20%, rgba(168, 85, 247, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 90% 80%, rgba(217, 70, 239, 0.04) 0%, transparent 40%),
+    radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.02) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: -2;
+}
+
+/* ─── Typography Refinement ─── */
+.font-script {
+  font-family: 'Pinyon Script', cursive;
+  font-weight: 400;
+}
+
+/* ─── Scrollbar ─── */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--background); }
+::-webkit-scrollbar-thumb { background: #444; border-radius: 10px; }
+::-webkit-scrollbar-thumb:hover { background: var(--purple-brand); }
+
+@layer components {
+  /* ─── Gradients & Effects ─── */
+  .bg-brand-gradient {
+    background: linear-gradient(135deg, #8B5CF6, #D946EF);
+    box-shadow: 0 0 20px rgba(168, 85, 247, 0.2);
+  }
+
+  .text-brand-gradient {
+    background: linear-gradient(135deg, #A855F7, #D946EF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .glass-pill {
+    background: rgba(255, 255, 255, 0.02);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(168, 85, 247, 0.1);
+    border-radius: 100px;
+  }
+
+  /* ─── Premium Cards ─── */
+  .premium-card {
+    background: rgba(18, 18, 20, 0.5);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    border-radius: 24px;
+    transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 
+      inset 0 1px 1px 0 rgba(255, 255, 255, 0.03),
+      0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  }
+
+  .premium-card:hover {
+    transform: translateY(-10px) scale(1.01);
+    border-color: rgba(168, 85, 247, 0.3);
+    background: rgba(22, 22, 26, 0.6);
+    box-shadow: 
+      inset 0 1px 1px 0 rgba(255, 255, 255, 0.06),
+      0 30px 60px -15px rgba(0, 0, 0, 0.8),
+      0 0 40px rgba(168, 85, 247, 0.08);
+  }
+
+  /* ─── Buttons ─── */
+  .btn-primary {
+    background: linear-gradient(to bottom, #A855F7, #7C3AED);
+    color: #ffffff;
+    padding: 14px 40px;
+    border-radius: 16px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    box-shadow: 
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.3),
+      0 12px 24px -6px rgba(124, 58, 237, 0.4);
+  }
+
+  .btn-primary:hover {
+    transform: translateY(-4px) scale(1.03);
+    filter: brightness(1.15);
+    box-shadow: 
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.4),
+      0 20px 40px -8px rgba(124, 58, 237, 0.6);
+  }
+
+  .btn-secondary {
+    background: rgba(168, 85, 247, 0.05);
+    border: 1px solid rgba(168, 85, 247, 0.15);
+    color: white;
+    padding: 14px 40px;
+    border-radius: 16px;
+    font-weight: 800;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+
+  .btn-secondary:hover {
+    background: rgba(168, 85, 247, 0.12);
+    border-color: rgba(168, 85, 247, 0.4);
+    transform: translateY(-4px);
+  }
+
+  .nav-blur {
+    backdrop-filter: blur(28px);
+    background: rgba(14, 14, 16, 0.85);
+  }
+
+  .section-spacing {
+    padding-top: 160px;
+    padding-bottom: 160px;
+  }
+}
+
+@layer utilities {
+  @keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-12px); }
+    100% { transform: translateY(0px); }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  @keyframes fadeInPremium {
+    0% { opacity: 0; transform: translateY(40px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+
+  .animate-premium {
+    animation: fadeInPremium 1.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+  }
+
+  @keyframes carousel {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+
+  .animate-carousel {
+    animation: carousel 45s linear infinite;
+    width: max-content;
+  }
+}
