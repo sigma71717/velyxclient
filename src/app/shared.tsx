@@ -23,8 +23,14 @@ export function SharedLayout({ title, subtitle, children, currentPath }: { title
       <header className="sticky top-0 z-50 nav-blur border-b border-white/5 font-inter">
         <nav className="max-w-[1240px] mx-auto px-8 h-24 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-4 group">
-            <div className="w-12 h-12 rounded-2xl bg-brand-gradient flex items-center justify-center font-black text-sm text-white shadow-2xl">ZN</div>
-            <span className="text-2xl font-black tracking-tighter">Zyn <span className="text-brand-gradient">Client</span></span>
+            <img 
+              src="/favicon.ico" 
+              alt="Zynt Logo" 
+              className="w-10 h-10 group-hover:scale-110 transition-transform duration-500"
+            />
+            <span className="text-2xl font-black tracking-tighter">
+              Zynt
+            </span>
           </Link>
           <div className="hidden md:flex items-center gap-12">
             {navLinks.map((item) => (

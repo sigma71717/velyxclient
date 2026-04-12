@@ -46,7 +46,7 @@ export default function Home() {
       <div className="bg-brand-gradient py-2.5 px-4 text-center text-[10px] uppercase font-black tracking-[0.2em] text-white shadow-lg overflow-hidden relative">
         <div className="absolute inset-0 bg-white/10 animate-pulse" />
         <a href="https://discord.gg/zynclient" target="_blank" rel="noopener noreferrer" className="relative hover:opacity-80 transition-opacity">
-          🔥 PROMOCJA WIELKANOCNA -30% Z KODEM "ZYN30" 🔥
+          🔥 Niedługo start I bedzie promka " 🔥
         </a>
       </div>
 
@@ -54,11 +54,13 @@ export default function Home() {
       <header className="sticky top-0 z-50 nav-blur border-b border-white/5 font-inter">
         <nav className="max-w-[1240px] mx-auto px-8 h-24 flex items-center justify-between">
           <Link href="/" className="flex items-center gap-4 group">
-            <div className="w-12 h-12 rounded-2xl bg-brand-gradient flex items-center justify-center font-black text-sm text-white shadow-[0_0_30px_rgba(168,85,247,0.4)] group-hover:rotate-12 transition-transform duration-500">
-              ZN
-            </div>
+            <img 
+              src="/favicon.ico" 
+              alt="Zynt Logo" 
+              className="w-10 h-10 group-hover:scale-110 transition-transform duration-500"
+            />
             <span className="text-2xl font-black tracking-tighter">
-              Zyn <span className="text-brand-gradient">Client</span>
+              Zynt
             </span>
           </Link>
 
@@ -112,7 +114,7 @@ export default function Home() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-purple-400 opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-purple-500"></span>
             </span>
-            Ponad 12,000 Klientów zaufało Zyn
+            Ponad 100 Klientów zaufało Zynt
           </div>
 
           <h1 className="text-7xl md:text-[120px] font-black tracking-tighter mb-12 leading-[0.85] animate-premium drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
@@ -205,7 +207,7 @@ export default function Home() {
         <div className="max-w-[1100px] mx-auto">
           <div className="text-center mb-36">
             <h2 className="text-6xl font-black mb-6 tracking-tight italic uppercase underline decoration-purple-500/50 underline-offset-8">Wersja v1.0</h2>
-            <p className="text-gray-600 uppercase font-black text-[12px] tracking-[0.5em]">Pierwsze oficjalne wydanie Zyn Client</p>
+            <p className="text-gray-600 uppercase font-black text-[12px] tracking-[0.5em]">Pierwsze oficjalne wydanie Zynt Client</p>
           </div>
 
           <div className="space-y-24">
@@ -215,32 +217,32 @@ export default function Home() {
                 changes: ["Oficjalne wydanie Zyn Client", "Ładne click ui oraz hud", "Dobre beypasy", "wsparcie dla wersji 1.21.4"]
               }
             ].map((update, i) => (
-                  <div key={i} className="flex gap-12 md:gap-24 items-start animate-premium">
-                    <div className="flex flex-col items-center pt-3">
-                      <div className="w-6 h-6 rounded-full bg-brand-gradient shadow-[0_0_20px_rgba(168,85,247,0.6)] border-[4px] border-[#0E0E10]" />
-                      <div className="flex-1 w-px bg-purple-500/10 my-8 shadow-[0_0_10px_purple]" />
-                    </div>
-                    <div className="flex-1 pb-24 border-b border-white/5 last:border-0 overflow-hidden">
-                      <div className="flex flex-wrap items-center gap-8 mb-12">
-                        <h4 className="text-4xl font-black tracking-tighter uppercase italic">{update.version}</h4>
-                        <span className="text-[10px] text-gray-500 font-black uppercase tracking-[0.3em]">{update.date}</span>
-                        {update.tag && (
-                          <span className="px-6 py-2 rounded-xl text-[10px] uppercase font-black tracking-[0.3em] bg-white text-[#0E0E10] shadow-[0_0_20px_white/20]">
-                            {update.tag}
-                          </span>
-                        )}
-                      </div>
-                      <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-7">
-                        {update.changes.map((change, j) => (
-                          <li key={j} className="flex items-center gap-5 text-gray-500 text-base font-bold hover:text-purple-300 transition-colors group">
-                            <span className="w-2.5 h-2.5 rounded-sm rotate-45 bg-purple-500 group-hover:scale-125 transition-transform" />
-                            {change}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+              <div key={i} className="flex gap-12 md:gap-24 items-start animate-premium">
+                <div className="flex flex-col items-center pt-3">
+                  <div className="w-6 h-6 rounded-full bg-brand-gradient shadow-[0_0_20px_rgba(168,85,247,0.6)] border-[4px] border-[#0E0E10]" />
+                  <div className="flex-1 w-px bg-purple-500/10 my-8 shadow-[0_0_10px_purple]" />
+                </div>
+                <div className="flex-1 pb-24 border-b border-white/5 last:border-0 overflow-hidden">
+                  <div className="flex flex-wrap items-center gap-8 mb-12">
+                    <h4 className="text-4xl font-black tracking-tighter uppercase italic">{update.version}</h4>
+                    <span className="text-[10px] text-gray-500 font-black uppercase tracking-[0.3em]">{update.date}</span>
+                    {update.tag && (
+                      <span className="px-6 py-2 rounded-xl text-[10px] uppercase font-black tracking-[0.3em] bg-white text-[#0E0E10] shadow-[0_0_20px_white/20]">
+                        {update.tag}
+                      </span>
+                    )}
                   </div>
-                ))
+                  <ul className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-7">
+                    {update.changes.map((change, j) => (
+                      <li key={j} className="flex items-center gap-5 text-gray-500 text-base font-bold hover:text-purple-300 transition-colors group">
+                        <span className="w-2.5 h-2.5 rounded-sm rotate-45 bg-purple-500 group-hover:scale-125 transition-transform" />
+                        {change}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+            ))
             }
           </div>
         </div>
@@ -291,7 +293,7 @@ export default function Home() {
           </div>
           <div className="space-y-6">
             <FaqItem q="Jakie są dostępne metody płatności?" a="Przyjmujemy płatności za pomocą PayPal, Przelewu (Instant), BLIK oraz wszystkich kart płatniczych (Stripe)." />
-            <FaqItem q="Gdzie pobiorę launcher Zyn Client?" a="Po zakupieniu subskrypcji otrzymasz dostęp do panelu klienta na naszym Discordzie, skąd pobierzesz zaszyfrowany launcher." />
+            <FaqItem q="Gdzie pobiorę launcher Zynt Client?" a="Po zakupieniu subskrypcji otrzymasz dostęp do panelu klienta na naszym Discordzie, skąd pobierzesz zaszyfrowany launcher." />
             <FaqItem q="Dostanę bana na Hypixelu?" a="Nasze configi są testowane codziennie. Używając ustawień 'Semi-Legit' ryzyko bana na Hypixelu wynosi praktycznie zero." />
             <FaqItem q="Czy moje dane są bezpieczne?" a="Przechowujemy jedynie minimum danych (HWID, Discord ID). Wszystkie połączenia są szyfrowane metodą AES-256." />
           </div>
@@ -304,7 +306,7 @@ export default function Home() {
           <div className="col-span-1 md:col-span-2">
             <Link href="/" className="flex items-center gap-5 mb-12 group">
               <div className="w-16 h-16 rounded-3xl bg-brand-gradient flex items-center justify-center font-black text-sm text-white shadow-3xl group-hover:rotate-[360deg] transition-transform duration-1000">ZN</div>
-              <span className="text-3xl font-black tracking-tighter">Zyn <span className="text-brand-gradient">Client</span></span>
+              <span className="text-3xl font-black tracking-tighter">Zynt <span className="text-brand-gradient">Client</span></span>
             </Link>
             <p className="text-gray-500 text-xl max-w-sm leading-relaxed font-bold italic">
               Zapewniamy przewagę, której potrzebujesz, by stać się niepokonanym. To nie jest tylko klient, to standard.
@@ -315,7 +317,7 @@ export default function Home() {
             <ul className="space-y-7 text-[11px] font-black uppercase tracking-[0.3em] text-gray-500">
               <li><Link href="/pricing" className="hover:text-purple-400 transition-colors">Cennik</Link></li>
               <li><Link href="/features" className="hover:text-purple-400 transition-colors">Lista Modułów</Link></li>
-              <li><Link href="https://discord.gg/zynclient" className="hover:text-purple-400 transition-colors">Discord Community</Link></li>
+              <li><Link href="https://discord.gg/bpcvfdk7" className="hover:text-purple-400 transition-colors">Discord Community</Link></li>
             </ul>
           </div>
           <div>
@@ -328,7 +330,7 @@ export default function Home() {
           </div>
         </div>
         <div className="max-w-[1240px] mx-auto mt-40 pt-16 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-12 text-[11px] uppercase font-black tracking-[0.4em] text-gray-700">
-          <p>© 2026 Zyn Client Network. Wszystkie prawa zastrzeżone.</p>
+          <p>© 2026 Zynt Client Network. Wszystkie prawa zastrzeżone.</p>
           <p className="opacity-50 hover:opacity-100 transition-opacity cursor-default">Crafted with precision for the elite.</p>
         </div>
       </footer>
